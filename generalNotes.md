@@ -6,7 +6,7 @@ Accounts: High level an account is a container for identities and resources
 - Has a name, needs a **unique email** and a payment method
 - Every account has a root user
 - Used as a logical segmentation for boundaries such as dev, prod or different teans
-- Every AWS account has own copy/db of IAM 
+- **Every** AWS account has **own copy/db** of IAM 
 
 ## IAM 
 IAM: acts an identity provider and can auth those identities. Nost cost service. Global service. No direct control on external accounts
