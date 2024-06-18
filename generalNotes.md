@@ -18,7 +18,9 @@ IAM: acts an identity provider and can auth those identities. Nost cost service.
 Keys can be created, deleted, made inactive or made active. Keys made up of access key id and secret access key
 
 ## AWS Organizations
-Allow Organizations to manage multiple AWS accounts in a cost-effective way.
+Allow Organizations to manage multiple AWS accounts in a cost-effective way. management account used to be called the master account. 
 
+MGMT account is special 
+Allow you to build complex nested structures if needed
 
 ## Resources
