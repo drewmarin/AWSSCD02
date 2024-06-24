@@ -23,4 +23,13 @@ Allow Organizations to manage multiple AWS accounts in a cost-effective way. man
 MGMT account is special 
 Allow you to build complex nested structures if needed
 
+### Service Control Policies
+- Can be attached to root container OR to one of more OUs
+- SCP inherit from upper level Policies 
+- By design the root account in a OU will **not** be affected by SCPs
+- Limit what the account can do including the root user, **BUT** are not granting permissions.
+- Can use them as an allow list or a Deny List. Deny List behavior is default
+   - To use as Allow List you must first get rid of the FullAWSAccess policy. And then you need to add any services you want to allow as a new policy.
+
+
 ## Resources
