@@ -7,6 +7,7 @@ Accounts: High level an account is a container for identities and resources
 - Every account has a root user
 - Used as a logical segmentation for boundaries such as dev, prod or different teans
 - **Every** AWS account has **own copy/db** of IAM 
+- AWS rotates which facilities are used for AZs so my us-east-1a may not be the same as yours, but has introduced AZ IDS to allow you to have consistency for shared deployments 
 
 ## IAM 
 IAM: acts an identity provider and can auth those identities. Nost cost service. Global service. No direct control on external accounts
@@ -31,7 +32,7 @@ Allow you to build complex nested structures if needed
 - Can use them as an allow list or a Deny List. Deny List behavior is default
    - To use as Allow List you must first get rid of the FullAWSAccess policy. And then you need to add any services you want to allow as a new policy.
 
-## AWS Control Tower
+## AWS Control Tower 🗼
 - Easy way to setup multi account enviornments
 - Orchastrates other AWS services to provide this functionality and leverages: Orgsm IAM Identity Center, Cloud Formation, COnfig and more. Provides Landing-Zone... SSO/ID federation, centralizewd logging
    - Account Factory: can create AWS accounts in automated fashion 
@@ -39,6 +40,12 @@ Allow you to build complex nested structures if needed
    - Guard Rails - multi-account governance/rules. Uses Mandatory, Strongly Recommended or Elective type of rules.Works in two ways: Preventative, and Detective (compliance checks)
 
 ## AWS Config
+Record config changes over time on resources. Does not prevent changes happening. Checks if resources are in complaince with standards. Regional service 
 
+## AWS Service Catalog
+Organized collection of products. Includes Key Product Info: owner, cost, requirements, support info, dependancies. Defines approval and provisionming from IT and cust side. Defined using cloud formation templates and service catalog configuration. Service Catalog launches the infrastructure using templates 
+
+## AWS Resource Access Manager
+Before RAM every AWS account was isolated, and notr visible to any other account. Only way to access was to use VPC peering. RAM allows you to share resources between AWS accounts. Products need to support RAM, not every product supports RAM. Products aree shared with principals(accounts, ous or orgs). The shared items can be accessed natively. RAM is a no cost feature 
 
 ## Resources
