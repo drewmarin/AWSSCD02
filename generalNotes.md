@@ -46,6 +46,33 @@ Record config changes over time on resources. Does not prevent changes happening
 Organized collection of products. Includes Key Product Info: owner, cost, requirements, support info, dependancies. Defines approval and provisionming from IT and cust side. Defined using cloud formation templates and service catalog configuration. Service Catalog launches the infrastructure using templates 
 
 ## AWS Resource Access Manager
-Before RAM every AWS account was isolated, and notr visible to any other account. Only way to access was to use VPC peering. RAM allows you to share resources between AWS accounts. Products need to support RAM, not every product supports RAM. Products aree shared with principals(accounts, ous or orgs). The shared items can be accessed natively. RAM is a no cost feature 
+Before RAM every AWS account was isolated, and notr visible to any other account. Only way to access was to use VPC peering. RAM allows you to share resources between AWS accounts. Products need to support RAM, not every product supports RAM. Products aree shared with principals(accounts, ous or orgs). The shared items can be accessed natively. RAM is a no cost feature. VPC owner is the only one who can provision resources 
+
+## AWS Trusted Advisor
+Provides Real time guidance using AWS best practices. Account Level product. Basic or Dev accounts get 7 core checks. Other accounts (biz and ent) prodvide other checks. Access via AWS support API 
+   Checks:
+      - S3 Bucket permissions: not on the objects
+      - Security Groups: specific ports unrestricted
+      - IAM use
+      - MFA on Root Account
+      - EBS Public Snapshots: checks permissions on EBS snapshots 
+      - RDS Public Snapshots
+      - 50 service limit checks:  
+
+## CloudFormation
+CF begins with a json or yaml document. Logical resources "the what". Templates are used to create "stacks". Stacks create the physical resources from the logical. Template parameters - accept input from console/cli/api and can be referenced from within logical resources allowing them to be part of the config. Psuedo Parameters allows aws to inject some options into stacks such as a region
+
+### Mappings
+object that contain logical resources allow you to map out settings to particular outcomes by using key pair values. They use a function called !FindInMap to retrieve data. 
+
+### Outputs 
+ Optional in template. Visible as outputs when using console ui and cli, and accessible from a parent stack when using nesting. and can be exposed. 
+
+### Conditions
+Created in the optional section of the template. Processed before resources are created. Uses other intrisitinc functions and, equals, if not or
+
+### Depends on
+Tries to determine a dependency order so it can figure out what can run in parallel or not. Uses references to create these orders. The DependsOn lets you explicitly define these lists.
+You may get an error if depencies aren't defined and cloudformation tries to create a resource before it's dependent is created
 
 ## Resources
