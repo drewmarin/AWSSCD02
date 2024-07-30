@@ -85,6 +85,22 @@ Traditional logical resource, can depend on other resources and vice versa.
 Presigned URL that acts as a signal agrigator 
 
 ### Nested Stacks
-Bundles all resources/ share lifecycle. can't easily reference other stacks. Has Root stack (created first). Parent Stack is the stack above a current stack 
+Bundles all resources/ share lifecycle. can't easily reference other stacks. Has Root stack (created first). Parent Stack is the stack above a current stack. can use a stack as a logical resource if needed. 
+- Use them to overcome resource limit (500 resources). 
+- Use them when you want to make your stacks in a modular fashion
+- When you want to make stack installations easier
+
+### Cross Stack References 
+Since stacks are desinged to be isolated and self-contained it is hard to share resources, and normally outputs of one stack is not visible from other places. Outputs can be exported which makes them visible to other stacks. 
+- Export names have to be unique
+- Use the import value function with the export name to use the resource from another stack if it is exported.
+- Cross-region sharing is not supported for Cross-Stack References.
+
+### Cloud Formation Deletion Policy
+If you delete a logical resource from a template by default the resource is deleted. With a deletion policy you can define an action when it is deleted from a template such as retain, delete or snapshot(for supported resources such as ebs, neptune, rds and redshift). 
+- Only apply to delete style resource. if you subtly change the logical resource in the template the resource will be replaced but a deletion policy will not be applied in this case.
+
+### Stack Roles
+when you create a stack cfn also creates a physical resource. CFN uses permissions of the logged in identity. CFN can assume a role to gain permissions allowing you to implement role separation. 
 
 ## Resources
