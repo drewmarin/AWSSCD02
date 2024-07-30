@@ -75,4 +75,16 @@ Created in the optional section of the template. Processed before resources are 
 Tries to determine a dependency order so it can figure out what can run in parallel or not. Uses references to create these orders. The DependsOn lets you explicitly define these lists.
 You may get an error if depencies aren't defined and cloudformation tries to create a resource before it's dependent is created
 
+### CFN Signal
+Allows you to go more indepth about the status of resources provisioned with cloud formation. You can even have CF wait until a certain signal is sent. Can also use timeouts (12 our max). Utility runs on the instance itself. If timeout is reached it is inferred as a cfn failure. 
+
+### Wait signal
+Traditional logical resource, can depend on other resources and vice versa. 
+
+### Wait Handle
+Presigned URL that acts as a signal agrigator 
+
+### Nested Stacks
+Bundles all resources/ share lifecycle. can't easily reference other stacks. Has Root stack (created first). Parent Stack is the stack above a current stack 
+
 ## Resources
