@@ -103,4 +103,14 @@ If you delete a logical resource from a template by default the resource is dele
 ### Stack Roles
 when you create a stack cfn also creates a physical resource. CFN uses permissions of the logged in identity. CFN can assume a role to gain permissions allowing you to implement role separation. 
 
+### ChangeSets
+ChangeSets allow you to preview changes and then you can apply them by executing the change set.
+
+### Custom Resources
+CF doesn't support everything in AWS so you can use custom resources to build a logical resource that you need.
+   Example:
+      populate s3 bucket with objects
+      delete objects in a bucket to prevent erroring
+      
+
 ## Resources
