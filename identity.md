@@ -41,6 +41,23 @@ Get attached to identities such as users, roles and groups. It is really just a 
     ]
 }
 ```
+## Principals 
+Can be individual people, computers, services or group of those things, Needs to authenticate or be authorized 
 
 ## IAM Users
-Identity used for anything requiring long term acess such as humans or service accounts. Most of the time IAM user is what you want to provision
+Identity used for anything requiring long term acess such as humans or service accounts. Most of the time IAM user is what you want to provision.
+    - Can only have 5k IAM users per account
+    - IAM member can only be a member of 10 groups
+
+## ARN
+Used to uniquely identify resources within any AWS accounts.
+
+## IAM Groups
+Containers for IAM users. They exist to make organizing users easier. You can't login as a group and they have no credentials on their own. No built in all users group . 
+    - no nesting
+    - only 300 groups per account but can be raised with ticket
+    - not a true identity cant be referenced as a principal in a policy 
+
+## IAM Roles
+One type of identity inside of AWS account. Best suited by an unknown or multiple users. Represents a level of access and to be used/borrow for a short period(quick token expirary). sts:assumerole is used when someone is assuming a role for access. 
+ 
