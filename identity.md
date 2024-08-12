@@ -9,6 +9,7 @@ Keys can be created, deleted, made inactive or made active. Keys made up of acce
 
 ## IAM Policies
 Get attached to identities such as users, roles and groups. It is really just a set of security statements in AWS. Policy documents are created in JSON made up of statement blocks. Best practice to use all fields. 
+    Variables: allow you to use a placeholder when you do not know the exact value of a resouce or key when writing the policies. 
 
 ### Types:
    - Inline Policies: Applying JSON individual to resources. Management is harder 
@@ -60,4 +61,14 @@ Containers for IAM users. They exist to make organizing users easier. You can't 
 
 ## IAM Roles
 One type of identity inside of AWS account. Best suited by an unknown or multiple users. Represents a level of access and to be used/borrow for a short period(quick token expirary). sts:assumerole is used when someone is assuming a role for access. 
+
+## Service-Linked Roles
+Is an IAM role linked to a specific AWS service. Predefined permissions by the service. Service might create/delete the role or allow you to during the setup of the role. The action in the IAM json will say CreateServiceLinkedRole 
+ 
+ ## Security Token Service
+ Underpins many processes in AWS. Generates temporary credentials when the operation is used. The credentials expire and do not belong to the identity that assumes the role. The authorization by default is based on the policy for the role. But can be augented. Can be used to access resources, and are always requested by another identity (AWS or External/IdP)
+
+ ## EC2 Instance Roles 
+ Roles an instance can assume.Can use permissions defined in the policy. The instance profile is a wrapper around the role that allows the permissions to get inside of the instance. Creds delivered via instance metadata. should be used rather than adding keys into the instance. 
+
  
