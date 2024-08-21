@@ -9,7 +9,7 @@ Keys can be created, deleted, made inactive or made active. Keys made up of acce
 
 ## IAM Policies
 Get attached to identities such as users, roles and groups. It is really just a set of security statements in AWS. Policy documents are created in JSON made up of statement blocks. Best practice to use all fields. 
-    Variables: allow you to use a placeholder when you do not know the exact value of a resouce or key when writing the policies. 
+    Variables: allow you to use a placeholder when you do not know the exact value of a resouce or key when writing the policies. Allow policies to be smarter/ modular 
 
 ### Types:
    - Inline Policies: Applying JSON individual to resources. Management is harder 
@@ -70,5 +70,17 @@ Is an IAM role linked to a specific AWS service. Predefined permissions by the s
 
  ## EC2 Instance Roles 
  Roles an instance can assume.Can use permissions defined in the policy. The instance profile is a wrapper around the role that allows the permissions to get inside of the instance. Creds delivered via instance metadata. should be used rather than adding keys into the instance. 
+
+ ## Policy Evaluation
+ First AWS gathers all policies that apply to that resource. 
+
+    - Explicity Deny: 
+    - Organization SCPs applied on the current account 
+    - Resource Policies
+    - IAM identity boundaries
+    - Session Policies
+    - Identity Policies
+
+
 
  
