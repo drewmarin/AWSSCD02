@@ -81,6 +81,19 @@ Is an IAM role linked to a specific AWS service. Predefined permissions by the s
     - Session Policies
     - Identity Policies
 
+### Permissions Boundry - 
+don't grant access but define max permissions an identity can recieve . Alllows others to delegate permissions that they inheriting user can't get around.
 
+## ExternalID
+Hub and spoke models allow cross account role switching because of the confused deputy paradigm so use external ID for better segmentation and get around security issues associated with aws account trusts. But when you create unique external IDs for the truted account trusts you can get around the confused deputy issues. 
 
- 
+## Directory Service - MSFT AD
+   - Built using AD 2012 r2
+   - Uses AD schema, and standard AD tools
+   - Supports group policy and sso 
+   - Used for AD Auth and authorization, uses 2az by default for HA
+   - Supports one way and two way external and forest trusts with on prem ad 
+   - Can operate through network link failure
+   - SUpports RADIUS based MFA thats already in place
+   - best choice for more than 5k users and need trust relationships
+   
