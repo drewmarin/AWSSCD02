@@ -96,4 +96,23 @@ Hub and spoke models allow cross account role switching because of the confused 
    - Can operate through network link failure
    - SUpports RADIUS based MFA thats already in place
    - best choice for more than 5k users and need trust relationships
+
+   If use AD connector you need connection between aws and on prme , only use if compelling reason to do so such as legal and complaince reason 
+
+## Identity Federation 
+Process where external identityes are used instead of services maintaining their own identities. Better experience for customers and less admin overhead. allows you go beyond aws lmits (5k iam)
+    Components:
+        Service Provider : App like IG 
+        Identity Provider: Systems that use standards like Oauth, saml 
+    Flow:
+        1. opens an app/service
+        2. Service reaches out to iDP for auth
+        3. customers login with tokens provided by idp 
    
+## Cognito
+Provides two pieces of functuality. Provides Authentication, Authorization and user managerment for web/mobile apps
+    Components:
+        1. User Pool - signins and get a json web token (jwt) (most services can't use jwt in AWS). User directory mgmt and profiles, sign up and in, mfa and other security features
+        2. Identity pool - allow you to offer access to temp AWS credentials. Allow users of apps to post into s3 or dbs, etc..
+            Unauthenticated identities - Guest Users
+            Federated identities - saml2.0 & user pool for short term aws creds to access aws resources
