@@ -111,6 +111,7 @@ CF doesn't support everything in AWS so you can use custom resources to build a 
    Example:
       populate s3 bucket with objects
       delete objects in a bucket to prevent erroring
-      
+
 
 ## Resources
+co
