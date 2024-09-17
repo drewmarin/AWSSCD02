@@ -154,3 +154,13 @@ Secureity Assertion Markup Language. Open standard used by many IdP's(MS ADFS). 
 3. SAMl assertion token is then handed and trusted by AWS / Other platform 
 4. App then communicates with AWS STS using sts assume role operation leveraging the saml assertion
 5. if accepted by STS then temp credentials are returned and used by the app hence the exchange has occured
+
+## IAM Identity Center
+
+Formally AWS SSO. somewhat replaces saml 2.0 solutions in aws.
+
+1. Centrally Manage AWS accounts and external apps
+2. Flexible identity source
+3. AWS Built in Identity store
+4. Can use AWS Managed AD or on premmised AD (trust or ad connector) or SDAML2.0 provider
+5. preferred by aws vs traditional workforce federation
