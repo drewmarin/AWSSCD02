@@ -32,3 +32,13 @@ In AWS diagrams Green means Public, and blue means private subnets.
     - network +3 future use
     - broadcast address (last ip in subnet)
 - dhcp options set: 
+
+### dhcp
+
+- starts with layer 2 broadcast message
+- reserved dhcp address responds with ip address, subnet mask and default gateway as well as DNS servers which are typically r53, also sends ntp netbios
+- can use either amazon provided dns or custom dns domain 
+- dhcp option sets can be used but once set they cannot be changed and can be associated with 0 or more VPCs
+- changing the associated dhcp option set is immediate but existing clients won't get new settings until they need a new lease
+
+### VPC router
