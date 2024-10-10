@@ -24,3 +24,11 @@ In AWS diagrams Green means Public, and blue means private subnets.
 - cannot be in multiple AZs
 - CIDRs are subsetof the CIDR in the VPC
 - cannot overlap with other subnets
+- optional ipv6 cidr if the vpc has ipv6 ranges
+- always has at least 5 reserved addresses
+    - network address
+    - network +1 address, used by vpc router 
+    - network +2 address, used for dns/route 53 
+    - network +3 future use
+    - broadcast address (last ip in subnet)
+- dhcp options set: 
