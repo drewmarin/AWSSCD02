@@ -7,6 +7,20 @@
 - Accessible inside all instances
 
 ## Private vs Public Services
-Refers to networking only
+Refers to networking only. Services still respect permissions that control access. 
 - Public : Accessed using public endpoints
 - Private : Accessed within a VPC 
+
+VPCs are isolated unless configured otherwise 
+
+## VPCs
+
+In AWS diagrams Green means Public, and blue means private subnets. 
+
+### Subnets
+
+- AZ resilient
+- a sub network of a vpc 
+- cannot be in multiple AZs
+- CIDRs are subsetof the CIDR in the VPC
+- cannot overlap with other subnets
