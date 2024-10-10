@@ -42,3 +42,13 @@ In AWS diagrams Green means Public, and blue means private subnets.
 - changing the associated dhcp option set is immediate but existing clients won't get new settings until they need a new lease
 
 ### VPC router
+
+- Virtual router within a vpc. HA and in all AZs.
+- Routes traffic from external into VPC and from VPC to outside
+- uses the +1 address in the subnet and every subnet has this access provisioned
+- every vpc router has a main route table, custom route tables can be associated to remove the basic main
+- can only have one route table associated at a time
+- edge association : route table with an edge gateway 
+- just a list of routes 
+- if multiple routes match a prefix is used as the priority and the higher the value the higher priority 
+- local routes always take priority even with a lower priority 
