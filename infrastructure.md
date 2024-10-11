@@ -18,6 +18,11 @@ VPCs are isolated unless configured otherwise
 - In AWS diagrams Green means Public, and blue means private subnets. 
 - VPCs are regionally isolated services
 - Nothing in or out without explicity config
+- private cidr block is default 
+- min /28 or max /16 
+- max of 5 additionally secondary ipv4 blocks
+- enableDNSHostnames is used to give hosts with public ipv4 addresses are registered in dns
+- enableDNSSUpport - use to enable dns resolution in vpc
 
 ### Subnets
 
