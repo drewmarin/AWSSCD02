@@ -15,7 +15,9 @@ VPCs are isolated unless configured otherwise
 
 ## VPCs
 
-In AWS diagrams Green means Public, and blue means private subnets. 
+- In AWS diagrams Green means Public, and blue means private subnets. 
+- VPCs are regionally isolated services
+- Nothing in or out without explicity config
 
 ### Subnets
 
