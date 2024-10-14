@@ -59,3 +59,45 @@ VPCs are isolated unless configured otherwise
 - just a list of routes 
 - if multiple routes match a prefix is used as the priority and the higher the value the higher priority 
 - local routes always take priority even with a lower priority 
+
+## Firewalls
+Stateless: sess request connect and response as two individual parts , outbound rules sometimes require full access to emphimeral port range
+
+stateful: smart enough to relate the request and response connectiosn together. this reduces need to create wide open outbound rules
+
+### Network Access Control Lists
+Similar to a psuedo firewall defined within a VPC 
+
+- Contains rules grouped into inbound and outbound.
+- Stateless 
+- Offers both explicity denies and allows 
+- Rules are processed in 
+- each subnet can only have one nacl
+- can be used in conjunction with security groups
+- can be applied to many subnets
+
+### Security groups
+Similar to a psuedo firewall
+
+- stateful
+- no explicit deny 
+- supports ip/cidr and logical resources including itself
+- attached to ENI's and not instances
+
+## Internet Gateways
+
+- Optional but needed if you want internet access to not just public internet but also AWS public services
+- 1:1 IGW to VPC relationship
+- H/A and scalable by default
+- Works for both IPv4 and IPv6
+- 1:1 static nat 
+- to allow your vpc services to have public spaces
+   - create igw
+   - create igw to vpc 
+   - create custom route table
+   - associate route table
+   - default routes -> gateway
+   - ENIs need to be launched with a public ip
+   
+
+
