@@ -99,5 +99,23 @@ Similar to a psuedo firewall
    - default routes -> gateway
    - ENIs need to be launched with a public ip
    
+### Egress-Only Gateways
+ - IPv4 NAT allows private ip to access public networks without allowing external traffic
+ - All ipv6 addesses in AWS are public
+ - Egress Only is outboud only 
+ - HA by default across all AZs in in the region 
+ - Stateful so traffic back will work , but inbound denied
+
+
+### Bastion Host
+- Runs at edge
+- Hardened to withstand attacks
+- Ingress control
+
+## NAT Instance
+- Used before nat gateways this was used 
+- EOL because used Amazon Linux 
+- Just running special software
+- can be used as bastion hosts
 
 
