@@ -141,4 +141,15 @@ Similar to a psuedo firewall
 - "interesting traffic" just means it matches certain rules
 - IKE (Internet key ecchange)
    - uses asymmetrical encryption
--
+- IKE Phase 2 (faster)
+   - uses keys agreed upon in p1
+   - agree on encryption method used 
+   - create ipsec sa p2 tunnels
+
+## Virtual Private Gateway
+
+- Gateway between aws vpcs and non aws networks (on prem, other clouds, etc)
+- can be attached and detached 
+- 1:1 vpc relationship
+- Given a private asn 
+
