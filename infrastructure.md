@@ -118,4 +118,27 @@ Similar to a psuedo firewall
 - Just running special software
 - can be used as bastion hosts
 
+## NAT Gateway
 
+- Has a private ip that is mapped by the internet gateway to allow outbount
+- Allows you to point subnets route table to gatewya vs igw
+- records ip and port numbers to remember which traffic goes to each place
+- allows multuple IPs to masquerade behind the gateways ip
+- runs from a public subnet and uses an elastic (static ip)
+- AZ resillient service, but need to deploy one in each az for full region ha
+- scales to 45gbps 
+- need to use route tables to point to the nat gateway 
+- nat gateways can't change IPs
+- capable of handling 55k simulatenous to each unique destination
+- or 900/s to single destination, if you go above this you may see an errorport allocation errorport
+- for s3 or dynamodb you can use a gateway endpoint (0 cost)
+- Use NACL on subnet to secure them , you can't use SG on the gateway itself
+
+## IPSEC
+
+- Group of protocols used to create tunnels accross insecure networks between "peers"
+- Provides authentication and encryption
+- "interesting traffic" just means it matches certain rules
+- IKE (Internet key ecchange)
+   - uses asymmetrical encryption
+-
