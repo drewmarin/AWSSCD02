@@ -152,4 +152,12 @@ Similar to a psuedo firewall
 - can be attached and detached 
 - 1:1 vpc relationship
 - Given a private asn 
+- uses bgp to learn new routes 
+
+## AWS Site-To-Site VPN
+
+- logical connection between vpc and on prem network running over public internet
+- FULL HA if you design it correctly , not by default
+- provision in less than an hour vs direct connect
+- Leverages VPC, VGW technologies , Customer Gateway (CGW) can refer to both logical and physical object/router
 
