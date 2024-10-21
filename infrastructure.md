@@ -160,4 +160,24 @@ Similar to a psuedo firewall
 - FULL HA if you design it correctly , not by default
 - provision in less than an hour vs direct connect
 - Leverages VPC, VGW technologies , Customer Gateway (CGW) can refer to both logical and physical object/router
+- Needs IP range of VPC , Need on prem network ip range including the router/vpn appliance 
+- Customer's on prem router is single point of failure
+- dynamic vpn uses bgp 
+- 1.25gbps limitation on aws side
+- hourly cost, gb out cost
+- can be used with DX 
 
+
+## Client VPN
+
+- Managed implementation of OpenVPN
+- connect to client VPN endpoint associated with one vpc 
+- charges are based on flat rate on subnet networks , and hourly fee per user
+
+## VPC Endpoints
+
+- provide private access to s3 and dynamodb (other services maybe in the future)
+- prefix list added to oute table -> gateway endpoint
+- HA across all AZs in a region by default
+- Endpoint policy is used to control what it can access 
+- can;t access cross region services with this
