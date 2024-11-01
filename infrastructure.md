@@ -181,3 +181,14 @@ Similar to a psuedo firewall
 - HA across all AZs in a region by default
 - Endpoint policy is used to control what it can access 
 - can;t access cross region services with this
+
+
+## Interface Endpoints
+
+- provide private access to AWS public services
+- historically not s2 or ddb but now s3 is supported
+- not ha because it is specific to subnets - an eni 
+- controlled via sgs 
+- tcp and ipv4 only
+- uses privatelink 
+- essentially overwrites dns to reroute stuff
