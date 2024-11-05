@@ -182,6 +182,12 @@ Similar to a psuedo firewall
 - Endpoint policy is used to control what it can access 
 - can;t access cross region services with this
 
+### VPC Endpoint Policies
+
+- Allow access to an entire service in a region via the endpoint, really just controlling the endpoint now the rest of the iam policies/needs
+- Needs to be a supported Service <https://docs.aws.amazon.com/vpc/latest/privatelink/aws-services-privatelink-support.html>
+
+
 
 ## Interface Endpoints
 
@@ -192,3 +198,6 @@ Similar to a psuedo firewall
 - tcp and ipv4 only
 - uses privatelink 
 - essentially overwrites dns to reroute stuff
+
+
+## Resources 
