@@ -186,7 +186,8 @@ Similar to a psuedo firewall
 
 - Allow access to an entire service in a region via the endpoint, really just controlling the endpoint now the rest of the iam policies/needs
 - Needs to be a supported Service <https://docs.aws.amazon.com/vpc/latest/privatelink/aws-services-privatelink-support.html>
-
+- Can contain conditions and a principal
+- Used to limit what a Private VPC can access
 
 
 ## Interface Endpoints
@@ -198,6 +199,32 @@ Similar to a psuedo firewall
 - tcp and ipv4 only
 - uses privatelink 
 - essentially overwrites dns to reroute stuff
+
+## VPC DNS 
+
+- .2 addess reserved now called route53 resolver
+- only accessible within a vpc, hard to use in hybrid enviornment 
+- historically could not forward dns request outside of r53 
+- r53 resolver will forward outbound requests to public DNS 
+- could use dhcp ooptions to forward selected requests to on-premises
+- ec2 forwarder could act as an intermediary for AWS -> onprem , but is a legacy architecture
+
+## R53 endpoints
+
+- presented as ENIs in the VPC and accessible over vpn or direct connect
+- can be inbound or outbound endpoints
+   - inbound is for on premises requests going to r53
+   - outbound is to forward quieries back to on prem 
+- rules are used to control what is forwarded and where to 
+
+## VPC Peering
+
+- Let's you create a encrypted tunnel between two VPCs and only TWO
+- Can be in the same account or different account 
+- Can optionally allow public hostnames to resolve to private IPS
+- If in the same regions than you can reference SGs in the peer accounts
+- Does not allow transitive peering , meaning if two VPCs and A&C are paired to B this does not allow A&C to talk to each other, they can still only talk to B 
+
 
 
 ## Resources 
