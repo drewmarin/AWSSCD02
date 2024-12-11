@@ -112,6 +112,22 @@ CF doesn't support everything in AWS so you can use custom resources to build a 
       populate s3 bucket with objects
       delete objects in a bucket to prevent erroring
 
+## Lambda
+
+### Lambda@edge
+
+- Allows you to run lightweight lambda at edge locations
+- Only node.js and python are supported as runtimes
+- run in aws public space so can't access VPC stuff
+- layers not supported
+- Different limits and timeouts vs normal lambda
+- can use it to perform a/b testing using viewer request functions
+- can used as an origin requerst function
+
+## DDOS 101
+
+
+
 
 ## Resources
 co

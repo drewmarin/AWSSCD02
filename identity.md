@@ -164,3 +164,16 @@ Formally AWS SSO. somewhat replaces saml 2.0 solutions in aws.
 3. AWS Built in Identity store
 4. Can use AWS Managed AD or on premmised AD (trust or ad connector) or SDAML2.0 provider
 5. preferred by aws vs traditional workforce federation
+
+## AWS Certificate Manager
+
+- Data is encrypted in-transit
+- Certificates prove identity by using a chain of trust
+- Can run as a public or private Certificate Authority 
+   - Private CA - Applications need to trust your private ca
+   - Public Browsers trust a list of providers which can trust others
+- Can generate or import certs
+- if generated can auto renew
+- if imported you are responsible for renewal 
+- Regional Service
+- Certs can't leave the region they are in 

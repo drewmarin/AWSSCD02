@@ -224,7 +224,47 @@ Similar to a psuedo firewall
 - Can optionally allow public hostnames to resolve to private IPS
 - If in the same regions than you can reference SGs in the peer accounts
 - Does not allow transitive peering , meaning if two VPCs and A&C are paired to B this does not allow A&C to talk to each other, they can still only talk to B 
+- still needs routing components to be put in place 
+- uses global aws transit network 
+
+## Cloud Front
+
+- CDN service
+- Origin- original location of the object either s3 or custom origin
+- distribution - cfg unit of Cloud Front
+- edge location: local cache of your data
+- regional local cache - larger edhge cache, provide another layer of caching
+- integrates with acm for https/ssl requests
+- no upload support, download only 
+- SSL supported by default
+- can use dns providers to add alternative domain names to cloud front cnames
+- both ssl connections viewer -> cloud front and cf -> origin need to have valid public certs
+
+### Zones
+
+- Origin Fetch : transfer of data from origin locations to edge networks
+- Origin Access Identity (OAI): type of identity , can be associated with CF Distributions
+- Custom Origins: Can use custom headers for access over https (can add this header via CF)
+
+### Georestriction
+
+- Can restrict content to specific locations
+- Can use a Whitelist or Blacklist by country only 
+- Applies to entire distribution
+- Can use third party geolocation and is customisable which allows you to do this via browsers and more
+- third party geo location requires some sort of compute to act as a "decider"
+- private access requires signed url or cookie
 
 
+### Access
+
+- public: open access
+- private: requests require signed cookie or url
+- 1 behavior for whole distribituion
+- trusted signer is used for private behaviors
+- trusted key groups: determine which key can be used to sign urls and cookies. Used because you don't need to use the root user to sign.
+- signed urls provide access to one object
+- signed cookies 
+- field-level encryption: happens at the edge and separately from the https tunne. privat ekey is needed to decrypted
 
 ## Resources 
