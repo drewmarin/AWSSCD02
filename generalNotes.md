@@ -126,8 +126,33 @@ CF doesn't support everything in AWS so you can use custom resources to build a 
 
 ## DDOS 101
 
+- Come in many different types: app, protocol and volumetric connections
+- thought is to overwhelm a resource to the point it cannot respond
+- often orcharstrated to leverage large botnets (infected machines)
+- Examples
+   - App : HTTP Flood
+   - Protocol: SYN Floods
+   - Volumetric: DNS Amplification
 
+### AWS Sheild
 
+-  Managed DDOS tool
+- Comes in two flavors: standard and advanced
+- standard is free: protects against network and transport layer attacks. helps protect region/vpc or the aws edge
+- advanced: 3k per month per org. protects cf, r53 global accelerator , EIPS. ALBS CLBS and NLBS./ Must be explicity enabled. ALso offers cost protection for unmitigated attacks. WQAF integration so can protect l7 
+
+### AWS Network Firewall
+
+- Regional product, endpoints are elastic and run in select subnets in an AZ
+- 1:M firewall to policy behavior , firewall can only have 1 policy
+- Rule Groups - Collection of rules: either stateless or stateful 
+- Policy discrete unit of config 
+- stateless: inspects in insolation / not aware of state of comms usually 2x rules
+   - 5 tuple - Protocol, SRC/DST CIDR, SRC/DST ports
+   - Actions: Pass, Drop, FOrward or Custom
+- stateful: uses suricata rules engine. Default = Pass, order pass, drop, accelerator
+   - 5 tuple w/state
+   - Domain lists & Protocol types
 
 ## Resources
 co
