@@ -177,3 +177,7 @@ Formally AWS SSO. somewhat replaces saml 2.0 solutions in aws.
 - if imported you are responsible for renewal 
 - Regional Service
 - Certs can't leave the region they are in 
+
+## DNSSEC w/ r53
+
+-
