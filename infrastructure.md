@@ -267,4 +267,43 @@ Similar to a psuedo firewall
 - signed cookies 
 - field-level encryption: happens at the edge and separately from the https tunne. privat ekey is needed to decrypted
 
+## WAF
+
+- Layer 7 firewall, capable of understanding layer 7 protocols like http and https
+- Can output logs to kinesis firehose, cloud watch or s3(on a 5 minute cadence)
+
+
+### WEBACL
+
+- Can change default action to allow or block
+- Can be used in front of cloudfront, a regional service such alb, api gateway, app sync
+- Rules and rule groups are processed in order
+- Have a "compute" limits based on WCU which has a default of 1500 units
+-  Aresource can only have one WACL but a WACL can be tied to many resources
+- Cannot be used with AWS outposts
+- Typically priced at $5 a month , plus $1 per rule, plus every request monthly at $.6 per million requests
+- Intelligent threat mitigation available at higher cost. Examples: bot control , captchas , fraud control/ account takeover, marketplace rule groups
+
+
+#### Rule Groups
+
+- Contain Rules
+- No default actions associated with the as those are defined by the Webacl
+- managed by AWS, yours, or by a service
+- Some rule groups have additional fees from AWS or from the Marketplace
+- Can be reused
+
+##### Rules
+
+- Have a Type, statement and action
+- Can be regular or rate based
+- regular is designed if something occurs
+- rate based is if something happens at a particular cadence 
+- Statement of the rule: (what to match) or (count all) or (what & count)
+- can match by origin country, ip, header, cookies query parameter, uri path, query string, http method. 
+- Only checking first 8192 bytes
+- can use labels, but allows for multi stage flows
+
+
+
 ## Resources 

@@ -49,3 +49,52 @@
 - PUb SUB notification system 
 - Public service 
 - Messages have a limit of 256kb in size
+- Topics are the base of SNS for permissions and config
+- Publishers send messages to a TOPIC 
+- TOPICS can have subsribers which recieve messages
+- HTTP, JSON, Mobile Puish and SMS messages as well as Lambda can be used as subscribers
+- Delivery Status from supported subscribers
+- Offers delivery retries 
+
+## Amazon Inspector
+
+- Designed to check ec2 instances & the OS or containers
+- Runs an assessment/benchmark check against best practices 
+- Rules packages determine what is checked
+- Agent required checks for stuff like host assessments , includes CVEs , CIS benchmarks, best practices
+
+## Trusted Advisor 
+
+- account level, so no agents
+- Focuses on cost, performance, security, fault tolerance and service limits
+- 7 core checks with basic and dev support plans
+    - S3 bucket permissions - not objkects
+    - Security Groups: specific ports unrestricted
+    - IAM usage
+    - MFA on Root account
+    - EBS public snapshots
+    - RDS publick snapshots
+    - 50 service limit checks ( looks for 80%+ utlization)
+ - Enterprise support has 115 further checks (14 cost, 17 security, 24 fault tolerance, 10 performance and 50 service limit). Also provides the AWS support API 
+
+## VPC Flow Logs
+
+- Capture packet metadata, not the contents
+- Can be attached to a VPC / so all interfaces
+- Can be attached to all ENIS in a subnet
+- Can be attached to ENIs directly
+- FLow logs are not realtime
+- Can go to s3 or cloudwatch logs
+- Can use Athena for querying
+- icmp =1 , tcp = 6 and udp = 17
+- some things are excluded, time server, dhcp, amazon windows license server and to the metadata service
+
+
+## Layer 7 firewalls 
+
+- Adds additional capabilities compared to other firewalls
+   - Example for HTTP: they understand the headers, hosts, data etc
+      - can identity protocol specific attacks
+      - looks for abnormailities in the protocols
+      - 
+-
