@@ -68,6 +68,33 @@
  - AWS Servicves which use KMS use Symmetric NOT Asymmetric keys
 
 
+ #### Digital Signing using KMS
+
+  - File or digest is submitted to KMS using the sign API
+  - if less than 4kb it is handled by KMS, otherewise you create a digest(HAS) that you send to KMS telling it via the MessageType parameter
+  - uses private key part to create a signature of the digest 
+  - KMS returns the signature to node a
+  - Node B then grabs the file and creates it's own HASH of the file and uses the verify API to verify the signature, hash algoright and key used
+  - KMS then verifies the file if the digest matches
+  - Can be done without KMS via the public key part which can be exported out of KMS
+
+
+#### Encryption SDK
+
+- Can use the Client Side encryption sdk - apache 2.0 license
+- Supports C, .net, aws cli, java, javascript and python
+- Handles data keys and wrapping keys
+- by default uses a unique key for every encryption action, but KMS has rate limits 
+- Rate limit is 50,000 across us-east-1, us-west-2 and eu-west-1, or 10k across (us-east-2, ap-southweast-1 ) 
+- If you use Crypto Materials Cache(CMM) you can reuse keys used to reduce cost (Not best practice)
+- CMM: can define max age, max messages encrypted, max bytes encrypted and more
+- 
+
+### KMS Grants
+
+-
+
+
 ## CloudHSM
 
 - fully customer Managed
