@@ -180,4 +180,9 @@ Formally AWS SSO. somewhat replaces saml 2.0 solutions in aws.
 
 ## DNSSEC w/ r53
 
--
+- Starts with KMS 
+- Key Signing key and Zone SIgning Key 
+- RRSIG DNSKEY records
+- Uses public and private keys to encrypt the data in the query 
+- Parent zone adds a DS record 
+- Recommended to make alarms for internal failures, and key signing issue 
