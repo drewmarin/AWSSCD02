@@ -92,8 +92,24 @@
 
 ### KMS Grants
 
--
+- Can provide permission on 1 KMS key 
+- Designed for temporary access 
+- Generally used by AWS services and created on behalf of a user
+- Grant can only grant access , not deny.
+- Can take 5 minutes of delay before it can be used
 
+### Multi-region Keys
+
+- Single or Multi-region key is defiend up front
+- Can't use custom key stores
+- can be symmetric or asymmetric
+- can add or remove replica keys 
+- replicas are full key, and can be become primary 
+- when using rotation the new material is not used until the replicas have the new material also 
+- aws services treat these as collections of single region keys sometimes, causing wonky performance
+- Can aid in decreasing latency, disaster recovery 
+
+### KMS Custom Key Stores
 
 ## CloudHSM
 
@@ -115,3 +131,8 @@
 
 - Process of encrypting plaintext with a data key and then encrypting the data key with another key
 - asymmetric keys are flexible, but slow 
+
+## When to use KMS vs CloudHSM
+
+- KMS : AWS integration, uses aws api, FIPS 140-2 lvl 2 validated , shared hardware
+- HSM - Standard APIs (PKCD#11, JCE, CryptoNG), dedicated HSMs, FIPS 140-2 Lvl 3
