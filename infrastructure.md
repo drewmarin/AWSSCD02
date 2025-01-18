@@ -60,6 +60,12 @@ VPCs are isolated unless configured otherwise
 - if multiple routes match a prefix is used as the priority and the higher the value the higher priority 
 - local routes always take priority even with a lower priority 
 
+### Network Access Analyzer
+
+- identifies unintended network access to your resources
+- Helps demonstrate compliance, internet accessibility, trusted network paths and access
+
+
 ## Firewalls
 Stateless: sess request connect and response as two individual parts , outbound rules sometimes require full access to emphimeral port range
 

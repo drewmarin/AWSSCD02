@@ -154,5 +154,11 @@ CF doesn't support everything in AWS so you can use custom resources to build a 
    - 5 tuple w/state
    - Domain lists & Protocol types
 
+## AWS Audit Manager
+
+- Continually audit your AWS uage to simplify how you manage risk and compliance with regulations and standards
+- automates evidence collection 
+- controls: operating policie,s procedures and acitivies
+
 ## Resources
 co

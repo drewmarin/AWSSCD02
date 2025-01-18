@@ -10,6 +10,14 @@
 - once a volume is encrypted you cannot encrypt it
 - uses aes256
 
+## Nitro Envlave
+
+- EC2 feature that allows you to create isolated execution enviornments
+- seperate, hardened and constrained
+- only secure local socket connectivity to parent ec2
+- Used to secure sensitve data 
+- Supports attestation
+
 ### Data Sanitization
 
 - Ebs volumes are presented as raw unformatted devices 
