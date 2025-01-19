@@ -90,7 +90,31 @@
 - some things are excluded, time server, dhcp, amazon windows license server and to the metadata service
 
 
-## Layer 7 firewalls 
+## CloudTrail
+
+- Logs API actions and account events as CloudTrail Events
+- Stores last 90 days of history of Event History by default (no cost)
+- Events can be Managedment, Data and Insight Events
+- Trails can be one region or all regions
+- global services can sometimes only send their events to us-east-1
+- Data events not enabled by default
+- Can put data into s3 or cloudwatch logs
+- s3 must be enabled on trails
+
+## AWS Macie
+
+- Data Security & Privacy service
+- Can be used to automate discovery of data, PII, PHI and Finance data
+- Discover Monitor and Protect data stored in S3
+- Data identifies: Managed or Custom rules to identify this data
+- Custom Data identifies: Propiertary - Regex based
+- Integrates with Security Hub & finding events to Event Bridge
+- Supports Multi account strucutres either via Org or one Macie Account inviting other accounts
+- Discovery Jobs: Analyzing objects in s3 buckets using data idenitifers
+
+
+
+## Layer 7 firewalls
 
 - Adds additional capabilities compared to other firewalls
    - Example for HTTP: they understand the headers, hosts, data etc
