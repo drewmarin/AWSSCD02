@@ -23,6 +23,9 @@
 - Key Policies are used to allow KMS to trust the account their, because ultimately KMS is a shared service
 - Every Key has an associated policy 
 - DEK created by KMS but not managed by KMS
+- AWS managed keys are rotated every year
+- Grants allow you to programitxcallyu delegate use of the KMS keys to other principals, used to provide temporary permissions
+
 
 ### S3 Bucket Keys
 
@@ -41,12 +44,14 @@
 - Naming is standardized ie aws/s3....
 - Only usable by that service in that region, however metadata is readable by the creator AWS account
 - Key policy can be viewed but not changed
+- Rotated annually 
 
 #### Customer Managed
 
 - Created explicitly by customers
 - can be used by services which support customer managed keys
 - Full control of the key policy including the account trust
+- Not automatically rotated, must be enabled
 
 #### Key Material
 
@@ -66,6 +71,7 @@
  - Elliptci Curve (ECC) - Signing & verification 
  - KeySpec: can't be changed and sets what the key can be used for encrypt/decrypt or signing
  - AWS Servicves which use KMS use Symmetric NOT Asymmetric keys
+ - Do not support automatic rotation
 
 
  #### Digital Signing using KMS

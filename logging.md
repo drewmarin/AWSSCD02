@@ -28,6 +28,8 @@
 - subscriptions filter: can allow you to send something outside in real time. 
 - data firehose allows almost real time delivery
 - can also use custom lambda functions to send data to anywhere
+- on instances it always includes the eb-activity.log and access logs from nginx or apache proxy
+- duplicates in the [logstream] section of the agent config file will cause issues
 
 ### CloudWatch Events & Event Bridge
 
@@ -98,7 +100,7 @@
 - Trails can be one region or all regions
 - global services can sometimes only send their events to us-east-1
 - Data events not enabled by default
-- Can put data into s3 or cloudwatch logs
+- Can put data into s3 or cloudwatch logs, the s3 bucket can be cross account if needed however requester pays must be off
 - s3 must be enabled on trails
 
 ## AWS Macie
@@ -112,7 +114,9 @@
 - Supports Multi account strucutres either via Org or one Macie Account inviting other accounts
 - Discovery Jobs: Analyzing objects in s3 buckets using data idenitifers
 
+## AWS Open Search
 
+- s
 
 ## Layer 7 firewalls
 
