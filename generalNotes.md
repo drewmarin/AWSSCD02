@@ -33,7 +33,7 @@ Allow you to build complex nested structures if needed
    - To use as Allow List you must first get rid of the FullAWSAccess policy. And then you need to add any services you want to allow as a new policy.
 
 ## AWS Control Tower 🗼
-- Easy way to setup multi account enviornments
+- Easy way to setup multi account enviornments and follow best practices
 - Orchastrates other AWS services to provide this functionality and leverages: Orgsm IAM Identity Center, Cloud Formation, COnfig and more. Provides Landing-Zone... SSO/ID federation, centralizewd logging
    - Account Factory: can create AWS accounts in automated fashion 
    - Landing Zone : Designed to allow you to have a home region and well architected enviornment. Uses AWS Orgs, Aws Config, Cloudformation and more. Creates a Security OU (Log Archivew & Audit Accounts), Sandbox OU, Uses IAM identity center for SSO, And uses SNS for Monitoring

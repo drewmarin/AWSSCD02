@@ -44,14 +44,14 @@
 - Naming is standardized ie aws/s3....
 - Only usable by that service in that region, however metadata is readable by the creator AWS account
 - Key policy can be viewed but not changed
-- Rotated annually 
+- Rotated annually
 
 #### Customer Managed
 
 - Created explicitly by customers
 - can be used by services which support customer managed keys
 - Full control of the key policy including the account trust
-- Not automatically rotated, must be enabled
+- Do not support automatic rotation
 
 #### Key Material
 
@@ -117,6 +117,31 @@
 
 ### KMS Custom Key Stores
 
+- Provides 140-2 Level 2 modules
+- Keys can be interacted with via KMS and KMS APIs
+- Encryption operations are done on CloudHSM via KMS
+- Provides FIPS 140-2 Level 3 HSMs
+- only uses symmetric keys
+- no multi region keys
+- each clouydhsm cluster only supports one custom key store
+- account and region locked
+
+## KMS Encryption Context
+
+- implementation of Additional Authenticated Data (AAD)
+- Use non secret key pairs generally an email /id or asometing else known
+- when decrypting use the same non secret key pairs for authentication
+- 
+
+## AWS Secrets Manager
+
+- shares functionality with parameter store
+- designed for secrets (passwords, api keys)
+- usable via console, cli, api or SDK
+- supports automatic rotation.. this uses lambda
+- directly integrates with some products such as RDS
+
+
 ## CloudHSM
 
 - fully customer Managed
@@ -142,3 +167,8 @@
 
 - KMS : AWS integration, uses aws api, FIPS 140-2 lvl 2 validated , shared hardware
 - HSM - Standard APIs (PKCD#11, JCE, CryptoNG), dedicated HSMs, FIPS 140-2 Lvl 3
+
+## Elastic Load Balancers
+
+- Gateway load balancer: Does not support SNI
+- Support more than ec2 targets

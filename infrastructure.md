@@ -246,6 +246,8 @@ Similar to a psuedo firewall
 - can use dns providers to add alternative domain names to cloud front cnames
 - both ssl connections viewer -> cloud front and cf -> origin need to have valid public certs
 - best practice to request a public cert or import one to use a different domain name in front
+- can implement http security headers to tell a browser how to handle distributed content
+
 
 ### Zones
 

@@ -118,6 +118,18 @@
 
 - s
 
+## Kinesis
+
+- Data Streams: You cna use to collect and process large streams of data records in real time
+- firehose
+
+## IoT Core
+
+### IoT Device Defender
+
+- can audit the config of your devices, member connected devices to detect abnormal behavior and mitigate security risks.
+
+
 ## Layer 7 firewalls
 
 - Adds additional capabilities compared to other firewalls
