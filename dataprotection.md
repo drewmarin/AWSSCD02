@@ -172,3 +172,9 @@
 
 - Gateway load balancer: Does not support SNI
 - Support more than ec2 targets
+- load balancers actually place a node in each subnet to work
+- Created by using an A record that points to all the nodes used by the load balancer
+- if you select internet facing the ENIs of the nodes are given public addresses
+- only requirement is the nodes can talk to the backend instances
+- in order to function they need 8 or more addesses in the subnets they are using so at least a /28 address, but /27 or larger is suggested after taking in account for aws reserved addresses.
+
