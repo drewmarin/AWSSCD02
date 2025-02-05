@@ -160,5 +160,10 @@ CF doesn't support everything in AWS so you can use custom resources to build a 
 - automates evidence collection 
 - controls: operating policie,s procedures and acitivies
 
+## Aws Artifactr 
+
+- Allows you understand youyr aws security and complaince posture
+- used for compliance and online agreements
+
 ## Resources
 co
