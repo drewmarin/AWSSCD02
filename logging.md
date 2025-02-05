@@ -58,6 +58,10 @@
 - Delivery Status from supported subscribers
 - Offers delivery retries 
 
+## SES 
+
+- Uses port 587, 465
+
 ## Amazon Inspector
 
 - Designed to check ec2 instances & the OS or containers
@@ -121,7 +125,7 @@
 ## Kinesis
 
 - Data Streams: You cna use to collect and process large streams of data records in real time
-- firehose
+- firehose: Does not automatically encrypt data in transit
 
 ## IoT Core
 
@@ -138,3 +142,7 @@
       - looks for abnormailities in the protocols
       - 
 -
+
+## Amazon Security Lake
+
+- Centralized security data lake , supports ocsf 

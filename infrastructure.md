@@ -64,6 +64,7 @@ VPCs are isolated unless configured otherwise
 
 - identifies unintended network access to your resources
 - Helps demonstrate compliance, internet accessibility, trusted network paths and access
+- cannot perform deep packet analysis
 
 
 ## Firewalls

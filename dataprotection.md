@@ -178,3 +178,6 @@
 - only requirement is the nodes can talk to the backend instances
 - in order to function they need 8 or more addesses in the subnets they are using so at least a /28 address, but /27 or larger is suggested after taking in account for aws reserved addresses.
 
+### ALB 
+
+- Only support http & https listeners
