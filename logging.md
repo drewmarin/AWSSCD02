@@ -141,7 +141,12 @@
       - can identity protocol specific attacks
       - looks for abnormailities in the protocols
       - 
--
+## Athena
+
+- Serverless interactive querying service
+- adhoc queires, pay only data consunmed
+- Uses Schema on read: table like translation, never alters data in s3
+- Supports sources such as xml, json  as well as from aws sources such as cloud trail, elb and flow logs
 
 ## Amazon Security Lake
 
