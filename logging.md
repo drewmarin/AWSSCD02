@@ -147,6 +147,9 @@
 - adhoc queires, pay only data consunmed
 - Uses Schema on read: table like translation, never alters data in s3
 - Supports sources such as xml, json  as well as from aws sources such as cloud trail, elb and flow logs
+- Essentially works as a parsing engine
+- No infrastructure needed
+
 
 ## Amazon Security Lake
 
