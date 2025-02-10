@@ -149,6 +149,7 @@
 - Supports sources such as xml, json  as well as from aws sources such as cloud trail, elb and flow logs
 - Essentially works as a parsing engine
 - No infrastructure needed
+- good for data that doesn't need transformation
 
 
 ## Amazon Security Lake
