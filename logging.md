@@ -150,6 +150,7 @@
 - Essentially works as a parsing engine
 - No infrastructure needed
 - good for data that doesn't need transformation
+- preferred for aws service logs because of native support: vpc, cloud trail, elb cost reports and glue & web server
 
 
 ## Amazon Security Lake
